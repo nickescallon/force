@@ -1,0 +1,22 @@
+{
+  "name": "ne-boilerplate",
+  "version": "(0.0.1)",
+  "homepage": "https://github.com/nickescallon/force",
+  "authors": [
+    "Nick Escallon <nickescallon@gmail.com>"
+  ],
+  "description": "star wars visualized",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "d3": "~3.5.5"
+  }
+}
