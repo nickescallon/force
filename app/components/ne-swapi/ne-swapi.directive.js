@@ -19,9 +19,44 @@
       swapi.people.all()
       .then(function(allPeople) {
         scope.people = allPeople.results;
-        scope.count = allPeople.count;
+        scope.peopleCount = allPeople.count;
+      })
+      .then(function() {
+        swapi.films.all()
+        .then(function(allFilms) {
+          scope.films = allFilms.results;
+          scope.filmsCount = allFilms.count;
+        })
+      })
+      .then(function() {
+        swapi.starships.all()
+        .then(function(allStarships) {
+          scope.starships = allStarships.results;
+          scope.starshipsCount = allStarships.count;
+        })
+      })
+      .then(function() {
+        swapi.vehicles.all()
+        .then(function(allVehicles) {
+          scope.vehicles = allVehicles.results;
+          scope.vehicleCount = allVehicles.count;
+        })
+      })
+      .then(function() {
+        swapi.species.all()
+        .then(function(allSpecies) {
+          scope.species = allSpecies.results;
+          scope.speciesCount = allSpecies.count;
+        })
+      })
+      .then(function() {
+        swapi.planets.all()
+        .then(function(allPlanets) {
+          scope.planets = allPlanets.results;
+          scope.planetsCount = allPlanets.count;
+        })
       });
-    };
+    }
   }
 
 })();

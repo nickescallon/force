@@ -1,8 +1,45 @@
 <div class="swapi-display">
+
   <div>
-    <span>people count: {{::count}}</span>
+    <span>people count: {{::peopleCount}}</span>
   </div>
   <div ng-repeat="person in people">
     name: {{::person.name}}
   </div>
+
+  <div>
+    <span>films count: {{::filmsCount}}</span>
+  </div>
+  <div ng-repeat="film in films">
+    name: {{::film.title}}
+  </div>
+
+  <div>
+    <span>starships count: {{::starshipsCount}}</span>
+  </div>
+  <div ng-repeat="ship in starships">
+    name: {{::ship.name}}
+  </div>
+
+  <div>
+    <span>vehicles count: {{::vehiclesCount}}</span>
+  </div>
+  <div ng-repeat="vehicle in vehicles">
+    name: {{::vehicle.name}}
+  </div>
+
+  <div>
+    <span>species count: {{::speciesCount}}</span>
+  </div>
+  <div ng-repeat="specie in species">
+    name: {{::specie.name}}
+  </div>
+
+  <div>
+    <span>planets count: {{::planetsCount}}</span>
+  </div>
+  <div ng-repeat="planet in planets">
+    name: {{::planet.name}}
+  </div>
+
 </div>
