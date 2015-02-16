@@ -1,14 +1,26 @@
 (function() {
   angular.module('neSwapi.constants', [])
-  .constant('SWAPI', SWAPI());
+  .constant('ENDPOINTS', ENDPOINTS())
+  .constant('PAGE_PARAM', '?people=');
 
-  function SWAPI() {
-    var base = 'https://swapi.co/api/',
-        people = 'people/'
+  function ENDPOINTS() {
+    var root = 'https://swapi.co/api/',
+        people = 'people/',
+        films = 'films/',
+        starships = 'starships/',
+        vehicles = 'vehicles/',
+        species = 'species/',
+        planets = 'planets/'
 
     return {
-      BASE_URL: base,
-      PEOPLE_URL: base + people
+      ROOT: root,
+      PEOPLE: root + people,
+      FILMS: root + films,
+      STARSHIPS: root + starships,
+      VEHICLES: root + vehicles,
+      SPECIES: root + species,
+      PLANETS: root + planets
     };
-  };
+  }
+
 })();

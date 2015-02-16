@@ -11,9 +11,9 @@
       replace: true,
       templateUrl: 'ne-swapi.template.html',
       link: link
-    };
+    }
 
-    return directive
+    return directive;
 
     function link(scope, element, attrs) {
       swapi.people.all()
@@ -22,6 +22,6 @@
         scope.count = allPeople.count;
       });
     };
-  };
+  }
 
 })();
