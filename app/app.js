@@ -1,3 +1,3 @@
 (function() {
-  angular.module('neForce', ['neForce.directives.sample'])
+  angular.module('neForce', ['neSwapi.directive'])
 })();
