@@ -9,7 +9,9 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    express = require('express'),
+    http = require('http');
 
 // paths
 var sources = {
@@ -94,6 +96,26 @@ gulp.task('index', function() {
   .pipe(gulp.dest(destinations.root))
 });
 
+//serve
+gulp.task('server', function() {
+  var app = express(),
+      port = process.env.PORT || 3000,
+      server;
+
+  // Servce static assets
+  app.use('/dist',  express.static(__dirname + '/dist'));
+
+  // Routes - catch-all to return index.html
+  app.get('*', function (req, res) {
+    res.sendFile(__dirname + '/dist/index.html');
+  });
+
+  server = http.createServer(app);
+  server.listen(port, function() {
+    console.log('app listenting on port: ' + port);
+  });
+});
+
 /* GULP */
 
 //build
@@ -117,4 +139,4 @@ gulp.task('watch', function() {
 });
 
 //default
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['build', 'watch', 'server']);
