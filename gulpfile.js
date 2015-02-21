@@ -15,22 +15,25 @@ var gulp = require('gulp'),
 
 // paths
 var sources = {
-  app: {
-    js: ['./app/**/*.js'],
-    sass: ['./app/**/*.scss']
-  },
-  images: ['./assets/images/**/*.*'],
-  fonts: ['./assets/fonts/**/*.*'],
-  index: ['./app/index.html'],
-  templates: ['./app/**/*.html', '!./app/index.html']
-};
-var destinations = {
-  css: './dist/css/',
-  fonts: './dist/fonts/',
-  images: './dist/images/',
-  js: './dist/js/',
-  root: './dist/'
-};
+      app: {
+        js: ['./app/**/*.js'],
+        sass: ['./app/**/*.scss']
+      },
+      images: ['./assets/images/**/*.*'],
+      fonts: ['./assets/fonts/**/*.*'],
+      index: ['./app/index.html'],
+      templates: ['./app/**/*.html', '!./app/index.html']
+    },
+    destinations = {
+      css: './dist/css/',
+      fonts: './dist/fonts/',
+      images: './dist/images/',
+      js: './dist/js/',
+      root: './dist/'
+    };
+
+// ng-app
+var angularApp = 'ne.force';
 
 /* JAVASCRIPTS */
 
@@ -76,7 +79,7 @@ gulp.task('templates', function() {
   gulp.src(sources.templates)
   .pipe(flatten())
   .pipe(ngHtml2Js({
-    moduleName: 'neForce'
+    moduleName: angularApp
   }))
   .pipe(concat('template-cache.js'))
   .pipe(gulp.dest(destinations.js));

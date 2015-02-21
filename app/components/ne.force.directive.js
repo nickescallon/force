@@ -1,5 +1,5 @@
 (function() {
-  angular.module('neSwapi.directive', ['neSwapi.service'])
+  angular.module('ne.force.directive', ['ne.swapi.api'])
   .directive('swapiDisplay', swapiDisplay);
 
   // dependencies
@@ -9,7 +9,7 @@
     var directive = {
       restrict: 'E',
       replace: true,
-      templateUrl: 'ne-swapi.template.html',
+      templateUrl: 'ne.force.template.html',
       link: link
     }
 
