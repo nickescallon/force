@@ -1,5 +1,5 @@
 (function() {
-  angular.module('ne.force.directive', ['ne.swapi.api'])
+  angular.module('ne.force.directive', ['ne.swapi'])
   .directive('swapiDisplay', swapiDisplay);
 
   // dependencies

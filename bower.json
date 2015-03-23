@@ -18,6 +18,6 @@
   "dependencies": {
     "angular": "latest",
     "d3": "~3.5.5",
-    "ne-swapi": "~0.0.1"
+    "ne-swapi": ">=0.0.1"
   }
 }
